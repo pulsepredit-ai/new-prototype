@@ -1,0 +1,218 @@
+:root {
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --light-gray: #f8f9fa;
+  --dark-gray: #343a40;
+  --text-color: #212529;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--dark-gray);
+}
+
+#connection-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.status-disconnected {
+  background-color: var(--warning-color);
+  color: #333;
+}
+
+.status-connected {
+  background-color: var(--success-color);
+  color: #fff;
+}
+
+.connection-controls {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#connectBtn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+#connectBtn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.metric-card h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.metric-card p {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 300;
+}
+.metric-card p span {
+  font-weight: bold;
+}
+.metric-card.location p {
+  font-size: 1rem;
+}
+
+#mapLink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.map-link-hidden {
+  visibility: hidden;
+}
+
+/* Caregiver Form Styles */
+.caregiver-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.caregiver-section h2 {
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+
+#saveCaregiverBtn {
+  background-color: var(--success-color);
+  color: #fff;
+  width: 100%;
+}
+#saveCaregiverBtn:hover {
+  background-color: #218838;
+}
+
+#saveStatus {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bold;
+  color: var(--success-color);
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s;
+}
+
+.popup-overlay.show .popup-content {
+  transform: scale(1);
+}
+
+#cancelBtn {
+  background: var(--danger-color);
+  color: #fff;
+}
+#cancelBtn:hover {
+  background: #a71d2a;
+}

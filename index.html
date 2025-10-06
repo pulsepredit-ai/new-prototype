@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vital Band Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vital Band Dashboard</h1>
+      <div id="connection-status" class="status-disconnected">
+        Status: Disconnected
+      </div>
+    </header>
+    
+    <main>
+      <div class="connection-controls">
+        <button id="connectBtn">Connect to Band</button>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h2>BPM</h2>
+          <p><span id="bpm">--</span> bpm</p>
+        </div>
+        <div class="metric-card">
+          <h2>Steps</h2>
+          <p><span id="steps">--</span></p>
+        </div>
+        <div class="metric-card location">
+          <h2>Location</h2>
+          <p>Lat: <span id="lat">--</span></p>
+          <p>Lon: <span id="lon">--</span></p>
+          <a id="mapLink" href="#" target="_blank" class="map-link-hidden">Open in Google Maps</a>
+        </div>
+      </div>
+      
+      <div class="caregiver-section">
+        <h2>Caregiver Details</h2>
+        <form id="caregiverForm">
+          <div class="form-group">
+            <label for="caregiverName">Name</label>
+            <input type="text" id="caregiverName" placeholder="e.g., Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="caregiverMobile">Mobile Number</label>
+            <input type="tel" id="caregiverMobile" placeholder="e.g., +15551234567">
+          </div>
+          <div class="form-group">
+            <label for="caregiverEmail">Email</label>
+            <input type="email" id="caregiverEmail" placeholder="e.g., jane.doe@example.com">
+          </div>
+          <button type="button" id="saveCaregiverBtn">Save Details</button>
+          <span id="saveStatus"></span>
+        </form>
+      </div>
+    </main>
+  </div>
