@@ -1,13 +1,4 @@
-// --- CONFIGURATION ---
-const config = {
-    DEVICE_NAME: 'VitalBand',                
-    BLE_SERVICE_UUID: '4fafc201-1fb5-459e-8fcc-c5c9c331914b', 
-    BLE_CHARACTERISTIC_UUID: 'beb5483e-36e1-4688-b7f5-ea07361b26a8', 
-    N8N_WEBHOOK_URL: 'YOUR_N8N_WEBHOOK_URL_HERE' 
-};
 
-// --- DOM Elements ---
-// Connection & Metrics
 const connectBtn = document.getElementById("connectBtn");
 const statusDiv = document.getElementById("connection-status");
 const bpmEl = document.getElementById("bpm");
@@ -206,4 +197,5 @@ function resetMetrics() {
     latEl.textContent = '--';
     lonEl.textContent = '--';
     mapLink.classList.add('map-link-hidden');
+
 }
